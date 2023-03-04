@@ -1,24 +1,21 @@
-/* package codechef; // don't place package name! */
+class Solution {
+    public long countSubarrays(int[] A, int minK, int maxK) {
+        int lb = -1, lmin = -1, lmax = -1;
+        int n = A.length;
+        long count=0;
 
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+        for (int i=0; i<n; i++) {
+            if (A[i] >= minK && A[i] <= maxK) {
+                lmin = (A[i] == minK) ? i:lmin;
+                lmax = (A[i] == maxK) ? i:lmax;
+                count+= Math.max(0, Math.min(lmin, lmax) - lb);
+            } else {
+                lb = i;
+                lmin = -1;
+                lmax = -1;
+            }
+        }
 
-/* Name of the class has to be "Main" only if the class is public. */
-class Codechef
-{
-	public static void main (String[] args) throws java.lang.Exception
-	{
-		// your code goes here
-		Scanner sc=new Scanner(System.in);
-		int t=sc.nextInt();
-		while(t-->0){
-		    int a=sc.nextInt();
-		    int b=sc.nextInt();
-		    if(a<b)
-		    System.out.println("YES");
-		    else
-		    System.out.println("NO");
-		}
-	}
+        return count;
+    }
 }
