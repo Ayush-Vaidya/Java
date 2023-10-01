@@ -1,7 +1,6 @@
-import java.lang.*;
-import java.util.*;
 
-class SwtichCase {
+
+class SwitchCase {
     public static void main(String[] args) {
 
         int n = 2;
