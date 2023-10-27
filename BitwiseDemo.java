@@ -4,7 +4,7 @@ public class BitwiseDemo {
     public static void main(String args[])
 
     {
-        byte a = 9, b = 12;
+        byte a = 10, b = 12;
         byte c;
         c = (byte) (a << 4);
         c = (byte) (c | b);
