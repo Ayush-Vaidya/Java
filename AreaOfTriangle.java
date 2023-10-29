@@ -1,5 +1,6 @@
+package javap;
+
 import java.util.Scanner;
-import java.lang.*;
 
 public class AreaOfTriangle {
 
